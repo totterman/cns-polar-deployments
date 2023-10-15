@@ -3,11 +3,11 @@ kind: ConfigMap
 metadata:
   name: postgres-config
   labels:
-    db: polar-posgres
-  data:
-    init.sql: |
-      CREATE DATABASE polardb_catalog;
-      CREATE_DATABASE polardb_order;
+    db: polar-postgres
+data:
+  init.sql: |
+    CREATE DATABASE polardb_catalog;
+    CREATE_DATABASE polardb_order;
 
 ---
 

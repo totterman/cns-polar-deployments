@@ -26,7 +26,7 @@ spec:
             - name: KEYCLOAK_ADMIN_PASSWORD
               value: password
             - name: JAVA_OPTS_APPEND
-              value: "-Dkeycloak.import=/opt/keycloak/data/import/realm-config.json"
+              value: "-Dkeycloak.import=/opt/keycloak/data/import/full-realm-config.json"
           readinessProbe:
             httpGet:
               path: /realms/master

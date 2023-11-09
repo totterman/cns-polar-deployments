@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- github.com/totterman/cns-order-service/k8s?ref=main
+
+configMapGenerator:
+- behavior: merge
+  files:
+  - application-prod.yml
+  name: order-config
+
+images:
+- name: order-service
+  newName: ghcr.io/totterman/order-service
+  newTag: latest
+
+replicas:
+- count: 2
+  name: order-service
+
+patches:
+- path: patch-env.yml

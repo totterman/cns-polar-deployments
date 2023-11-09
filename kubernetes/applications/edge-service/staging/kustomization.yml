@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- github.com/totterman/cns-edge-service/k8s?ref=main
+
+configMapGenerator:
+- behavior: merge
+  files:
+  - application-prod.yml
+  name: edge-config
+
+images:
+- name: edge-service
+  newName: ghcr.io/totterman/edge-service
+  newTag: latest
+
+replicas:
+- count: 2
+  name: edge-service
+
+patches:
+- path: patch-env.yml

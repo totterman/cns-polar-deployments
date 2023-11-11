@@ -18,7 +18,7 @@ configMapGenerator:
 images:
 - name: catalog-service
   newName: ghcr.io/totterman/catalog-service
-  newTag: b649b9d548da293b065f300aa6bcc8b37ac366d1
+  newTag: 37534fb759c4a1890209f207fc4815f4bb6925cf
 
 replicas:
 - count: 2
